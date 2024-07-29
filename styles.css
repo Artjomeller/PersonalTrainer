@@ -1,0 +1,428 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel {
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+.carousel-item {
+    height: 100vh;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 16%;
+}
+
+/* Override default Bootstrap carousel control styles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+    content: none !important;
+}
+
+/* Custom arrow icons using FontAwesome */
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+    font-family: 'FontAwesome', serif;
+    content: '\f104';
+    color: yellow;
+    display: inline-block;
+    font-size: 24px;
+}
+
+.carousel-control-next-icon::before {
+    content: '\f105';
+}
+
+/* Change the indicator colors */
+.carousel-indicators button {
+    background-color: transparent;
+    border: 1px solid yellow;
+}
+
+.carousel-indicators .active {
+    background-color: yellow;
+}
+
+.styled-header {
+    color: white;
+    -webkit-text-stroke: 1px black;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    display: inline-block;
+    align-middle: middle;
+    margin-left: 1px;
+    font-weight: bold;
+}
+
+.red-back-text {
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 black;
+}
+
+.header-div {
+    z-index: 3;
+    position: absolute;
+    left: 30%;
+    top: 20px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover,
+.nav-link.nav-highlight {
+    color: yellow;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+}
+
+.navbar-collapse::before,
+.navbar-collapse::after {
+    content: '';
+    position: absolute;
+    left: -300px;
+    right: -300px;
+    height: 2px;
+    background-color: yellow;
+    z-index: -1;
+}
+
+.navbar-collapse::before {
+    top: -1px;
+}
+
+.navbar-collapse::after {
+    bottom: -2px;
+}
+
+.sizes-100vh {
+    width: 100vh;
+    height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flag-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    margin-right: 10px;
+}
+
+.flag-est {
+    background-image: url('assets/Flag/flag1.png');
+    top: 50%;
+    transform: translateY(-50%);
+    right: -40px;
+}
+
+.flag-rus {
+    background-image: url('assets/Flag/flag2.png');
+    top: 50%;
+    transform: translateY(-50%);
+    right: -65px;
+}
+
+.about-img {
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    left: 100px;
+}
+
+#about {
+    background-image: url('assets/Picture/6.jpeg');
+    background-size: cover;
+    background-position: 0% 16%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#about h2 {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    color: yellow;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col-4, .col-8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+@media (min-width: 768px) {
+    .col-4 {
+        width: 40%;
+    }
+    .col-8 {
+        width: 60%;
+    }
+}
+
+.navbar {
+    transition: background-color 0.1s ease-in-out;
+    background-color: transparent;
+}
+
+.fixed-top {
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+#personal-training .content {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+#personal-training .booking-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#personal-training .image-container {
+    background-image: url('assets/Picture/train1.jpg');
+    background-size: cover;
+    background-position: 0% 16%;
+    background-repeat: no-repeat;
+    margin-left: -100px;
+}
+
+#personal-training .col-md-6 {
+    flex: 1;
+}
+
+.booking-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-right: 20px;
+}
+
+.booking-form:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form .form-control {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+    color: gray;
+}
+
+.booking-form .form-control:focus {
+    border-color: black;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form .btn-primary {
+    background-color: gray;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    float: right;
+}
+
+.booking-form .btn-primary:hover {
+    background-color: black;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-prepend {
+    margin-right: 10px;
+}
+
+.input-group-text {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-right: 5px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.booking-form-container {
+    padding-left: 30px;
+    background-color: #f5f5f5;
+}
+
+.booking-form select.form-control {
+    color: gray;
+    background-color: white;
+}
+
+#personal-training .booking-form-container h2,
+#personal-training .booking-form-container p {
+    text-align: center;
+    color: gray;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blinking-button {
+    animation: blink 2s infinite;
+}
+#shop {
+    background-color: #f5f5f5;
+    background-image: url('assets/Picture/Epood.png'); /* Ensure the path is correct */
+    background-size: cover;
+    background-position: center; /* Adjusted to center for better focus */
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width of the container */
+    display: flex;
+    align-items: center; /* This will vertically center any content inside if added later */
+    justify-content: center; /* This will horizontally center content */
+    text-align: center;
+    color: #fff; /* Set text color to white in case you add text later */
+}
+#scrollTopBtn {
+    display: none; /* Initial state hidden */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    border: none; /* Remove any border */
+    background: none; /* Remove background */
+    padding: 0; /* Remove padding */
+}
+
+#scrollTopBtn img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+}
+
+#scrollTopBtn:hover {
+    transform: scale(1.05); /* Subtly enlarge on hover */
+}
+section {
+    padding: 20px 15px; /* Smaller padding */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Remove space above the first section and below the last section */
+section:first-of-type {
+    padding-top: 0;
+}
+
+section:last-of-type {
+    padding-bottom: 0;
+}
+#pricing{
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: 0% 16%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#video-training{
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: 0% 16%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#contact{
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: 0% 16%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+
+
