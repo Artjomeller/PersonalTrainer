@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const carousel = document.getElementById('carouselExampleIndicators');
     const scrollTopBtn = document.getElementById('scrollTopBtn');
-    const defaultBgColor = '#f8f9fa';
-    const activeSectionColor = 'darkgray';
 
     function clearHighlights() {
         navLinks.forEach(link => link.classList.remove('nav-highlight'));
@@ -18,10 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (scrollPosition > carouselBottom) {
             navbar.classList.add('fixed-top');
-            navbar.style.backgroundColor = defaultBgColor;
         } else {
             navbar.classList.remove('fixed-top');
-            navbar.style.backgroundColor = 'transparent';
         }
 
         let inSection = false;
@@ -31,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const sectionBottom = sectionTop + section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                navbar.style.backgroundColor = activeSectionColor;
+                navbar.classList.add('navbar-active'); // Add CSS class for active background
                 clearHighlights();
                 const matchingLink = Array.from(navLinks).find(link => link.getAttribute('href').includes(section.id));
                 if (matchingLink) {
@@ -42,8 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         if (!inSection) {
-            clearHighlights();
-            navbar.style.backgroundColor = 'transparent';
+            navbar.classList.remove('navbar-active'); // Remove CSS class if not in any section
         }
 
         scrollTopBtn.style.display = (window.pageYOffset > 500) ? 'block' : 'none';
@@ -77,4 +72,3 @@ document.addEventListener("DOMContentLoaded", function() {
         activeCaption.classList.add('active');
     });
 });
-
