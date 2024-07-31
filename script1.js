@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector('.navbar');
+    const fixedTopContent = document.querySelector('.fixed-top-content');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const carousel = document.getElementById('carouselExampleIndicators');
@@ -9,39 +10,47 @@ document.addEventListener("DOMContentLoaded", function() {
         navLinks.forEach(link => link.classList.remove('nav-highlight'));
     }
 
+    function updateNavLinkHighlights() {
+        // Calculate current scroll position minus the navbar height
+        const scrollPosition = window.pageYOffset + navbar.offsetHeight;
+        let foundSection = false;
+
+        // Iterate over each section to find the current section
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navbar.offsetHeight;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                clearHighlights();
+                const matchingLink = Array.from(navLinks).find(link => section.id && link.getAttribute('href').includes(section.id));
+                if (matchingLink) {
+                    matchingLink.classList.add('nav-highlight');
+                    foundSection = true;
+                }
+            }
+        });
+
+        // Highlight the first nav link if no section is found (indicative of being at the top of the page)
+        if (!foundSection && scrollPosition < sections[0].offsetTop - navbar.offsetHeight) {
+            clearHighlights();
+            navLinks[0].classList.add('nav-highlight');
+        }
+    }
+
     function handleScroll() {
-        const scrollOffset = 100;
-        const scrollPosition = window.pageYOffset + navbar.offsetHeight + scrollOffset;
+        const scrollPosition = window.pageYOffset;
         const carouselBottom = carousel ? carousel.offsetHeight : 0;
 
         if (scrollPosition > carouselBottom) {
             navbar.classList.add('fixed-top');
+            fixedTopContent.style.display = 'flex'; // Show the logo and text
         } else {
             navbar.classList.remove('fixed-top');
+            fixedTopContent.style.display = 'none'; // Hide the logo and text
         }
 
-        let inSection = false;
-
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop - navbar.offsetHeight + scrollOffset;
-            const sectionBottom = sectionTop + section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                navbar.classList.add('navbar-active'); // Add CSS class for active background
-                clearHighlights();
-                const matchingLink = Array.from(navLinks).find(link => link.getAttribute('href').includes(section.id));
-                if (matchingLink) {
-                    matchingLink.classList.add('nav-highlight');
-                }
-                inSection = true;
-            }
-        });
-
-        if (!inSection) {
-            navbar.classList.remove('navbar-active'); // Remove CSS class if not in any section
-        }
-
-        scrollTopBtn.style.display = (window.pageYOffset > 500) ? 'block' : 'none';
+        updateNavLinkHighlights();
+        scrollTopBtn.style.display = (scrollPosition > 500) ? 'block' : 'none';
     }
 
     function scrollToTop() {
@@ -54,21 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
     scrollTopBtn.addEventListener('click', scrollToTop);
     window.addEventListener('scroll', handleScroll);
 
-    // Carousel animation handling
-    var activeCaption = document.querySelector('.carousel-item.active .carousel-caption');
-    activeCaption.classList.add('active');
-
-    carousel.addEventListener('slid.bs.carousel', function () {
-        var activeItem = document.querySelector('.carousel-item.active');
-        var allCaptions = document.querySelectorAll('.carousel-caption');
-
-        // Remove active class from all captions
-        allCaptions.forEach(function(caption) {
-            caption.classList.remove('active');
-        });
-
-        // Add active class to the current caption
-        var activeCaption = activeItem.querySelector('.carousel-caption');
-        activeCaption.classList.add('active');
-    });
+    // Initialize nav link highlights
+    updateNavLinkHighlights();
 });

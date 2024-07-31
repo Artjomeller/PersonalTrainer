@@ -142,7 +142,7 @@ body {
     margin-top: 10px;
     margin-left: 10px;
     font-weight: bold;
-    animation: rubberband 5s linear infinite;
+    animation: rubberband 15s linear infinite;
     animation-delay: 5s; /* Delay the animation start by 5 seconds */
 }
 
@@ -338,6 +338,36 @@ body {
     z-index: 1030;
 }
 
+.fixed-top .fixed-top-content {
+    display: flex;  /* Flexbox to line items in a row */
+    align-items: center;  /* Center items vertically */
+    font-size: 1.3rem;
+    font-weight: bold;
+    /* Text size matched to navbar height */
+    color: yellow;  /* Yellow text when navbar is fixed */
+    position: absolute;  /* Absolute positioning to place content on the left */
+    left: 15px;  /* Adjust left position as needed */
+    top: 50%;
+    transform: translateY(-50%);  /* Center vertically */
+}
+
+.fixed-top .navbar-logo {
+    height: 2.5rem;  /* Match the text size */
+    width: auto;  /* Maintain aspect ratio */
+    margin-right: 20px;  /* Space between logo and text */
+}
+.fixed-top .fixed-top-content .fixed-top-text {
+    margin-top: 10px; /* Adds top margin to move the text down */
+}
+
+.fixed-top .flag-est {
+    right: 270px; /* Originally -40px, moving 100px more to the left */
+}
+
+.fixed-top .flag-rus {
+    right: 240px; /* Originally -65px, moving 100px more to the left */
+}
+
 #personal-training {
     margin-top: 15px !important; /* Forcefully applies this style */
 }
@@ -449,15 +479,35 @@ body {
     color: gray;
 }
 
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+@keyframes wiggle {
+    0%, 16.7%, 100% {
+        transform: rotateZ(0);
+    }
+    1% {
+        transform: rotateZ(-15deg);
+    }
+    2% {
+        transform: rotateZ(10deg);
+    }
+    3% {
+        transform: rotateZ(-10deg);
+    }
+    4% {
+        transform: rotateZ(6deg);
+    }
+    5% {
+        transform: rotateZ(-4deg);
+    }
+    6% {
+        transform: rotateZ(0);
+    }
 }
 
 .blinking-button {
-    animation: blink 2s infinite;
+    animation: wiggle 12s linear infinite;
+
 }
+
 #shop {
     background-color: #f5f5f5;
     background-image: url('assets/Picture/Epood.png'); /* Ensure the path is correct */
