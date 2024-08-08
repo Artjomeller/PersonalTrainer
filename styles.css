@@ -18,7 +18,7 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: 0% 16%;
+    object-position: 1% 16%;
 }
 
 
@@ -262,49 +262,107 @@ body {
     right: -65px;
 }
 
-.about-img {
-    max-width: 100%;
-    max-height: 100vh;
-    display: block;
-    margin: 0 auto;
+.content-wrapper {
     position: relative;
-    top: 10px;
-    left: 100px;
+    border: 2px solid yellow;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 3em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 5px;
 }
 
-#about {
-    background-image: url('assets/Picture/6.jpeg');
-    background-size: cover;
-    background-position: 0% 16%;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.content-wrapper:hover {
+    border: 2px solid yellow;
+    box-shadow: 0 0 13px yellow, 0 0 13px yellow, 0 0 13px yellow;
+}
+
+#about .content-wrapper {
+     width: 100%; /* Ensures the content wrapper takes full width */
+     max-height: 76vh; /* Limits the maximum height */
+ }
+
+.about-img {
+    height: auto;
+    width: 120%;
+    transition: 0.5s ease;
+    margin-top: 50px;
+    position: relative;
+    top:-790px;
+    left:890px;
+}
+
+.about {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#about h1 {
+    color:white;
+    font-size:80px;
+    font-weight:bold;
+    text-transform: capitalize;
     text-align: center;
-    color: #fff;
-    box-shadow: 0px 0px 15px black;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin:0 auto 10px;
 }
 
+#about h5{
+    color:white;
+    font-size:28px;
+    text-transform: capitalize;
+    text-align: center;
+}
 
-#about h2 {
-    margin-bottom: 15px;
-    font-size: 2.5rem;
+.consultant-color{
     color: yellow;
 }
 
-#about p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+#about {
+    min-height: 100%;
+    padding: 78px 1px;
+    background-image: url('assets/Picture/about1.jpg'); /* Path to your .png image */
+    background-size: cover; /* Cover the entire area of the element */
+    background-position: center top; /* Center horizontally, align to top vertically */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    margin-top: 1px;
+    margin-bottom: 1px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
+
+#about h2 {
+    text-align: center;
+    font-size: 40px;
+    color: darkgray;
+    font-weight: bold;
+}
+
+#about h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: ghostwhite;
+}
+
+#about p {
+    color:ghostwhite;
+    font-weight: bold;: ;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-size: 20px;
+    margin-bottom:45px;
+    text-align: center;
+}
+
 .minust {
     padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 30px;
 }
 
 .container {
@@ -313,14 +371,36 @@ body {
     justify-content: center;
 }
 
+.info-section {
+    display: flex;
+    width: 100%; /* Takes full width of the container */
+    justify-content: space-evenly; /* Evenly space between blocks */
+}
 
+.info-block h2, .info-block h4 {
+    margin: 0px; /* Removes margin for tighter spacing */
+}
+
+.info-block {
+    text-align: center; /* Center alignment of text within blocks */
+    min-width: 190px; /* Minimum width for each block */
+
+}
+
+.info-section h2 {
+    color: yellow !important;
+}
+
+.info-block h4 {
+    color:rgba(255,236,236, 0.8)
+}
 
 @media (min-width: 768px) {
     .col-4 {
-        width: 40%;
+        width: 70%;
     }
     .col-8 {
-        width: 60%;
+        width: 30%;
     }
 }
 
@@ -368,86 +448,84 @@ body {
     right: 240px; /* Originally -65px, moving 100px more to the left */
 }
 
+
+
+
 #personal-training {
-    margin-top: 15px !important; /* Forcefully applies this style */
-}
-
-#personal-training .content {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
     height: 100vh;
-    width: 100%;
+    padding-right: 5rem; /* Add some padding to ensure no overflow */
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
+    background: linear-gradient(to bottom, darkgrey 30%, #f5f5f5 70%) no-repeat center;
+    background-size: cover;
+    overflow: hidden; /* This will hide any overflow causing horizontal scroll */
 }
 
-#personal-training .booking-form-container {
+.booking-form-container {
+    padding: 30px;
+    width: 500px; /* Adjust if this is too wide for smaller viewports */
+    height: 750px;
+    border: 2px solid yellow;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#personal-training .image-container {
-    background-image: url('assets/Picture/train1.jpg');
-    background-size: cover;
-    background-position: 0% 16%;
-    background-repeat: no-repeat;
-    margin-left: -100px;
-
+.booking-form-container h2 {
+    color: yellow;
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: -16px;
 }
 
-#personal-training .col-md-6 {
-    flex: 1;
+.booking-form-container p {
+    color: black;
+    font-size: 20px;
+    margin-bottom: -20px;
 }
 
 .booking-form {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    margin-right: 20px;
+    background: rgba(255, 255, 0, 0.6);  /* Yellow semi-transparent background */
+    padding: 15px;  /* Padding around the form */
+    border-radius: 1em;  /* Rounded corners */
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 1);  /* Initial deeper shadow for contrast */
+    transition: box-shadow 0.3s ease;  /* Smooth transition for the shadow */
+    /* Left margin adjustment */
+    margin: 200px 5px 25px;
 }
 
-.booking-form:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.booking-form-container:hover {
+    box-shadow: 0 0 13px yellow, 0 0 13px yellow, 0 0 13px yellow;  /* Triple-layered bright yellow shadow for a glowing effect */
+    border: 2px solid yellow;  /* Ensure the border remains yellow on hover */
 }
 
-.booking-form .form-control {
-    border: 1px solid gray;
-    border-radius: 5px;
+.form-control {
+    border: 5px solid darkgrey;
+    border-radius: 1em;
     padding: 10px;
     margin-bottom: 10px;
-    transition: border-color 0.3s ease;
-    color: gray;
+    color: black;
 }
 
 .booking-form .form-control:focus {
     border-color: black;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.booking-form .btn-primary {
-    background-color: gray;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    float: right;
-}
-
-.booking-form .btn-primary:hover {
-    background-color: black;
-}
-
-.booking-form label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Slightly darker for better visibility */
 }
 
 .input-group {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .input-group-prepend {
@@ -459,54 +537,32 @@ body {
     border: none;
     padding: 0;
     margin-right: 5px;
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1.8rem;
+    color: dimgray;
 }
 
-.booking-form-container {
-    padding-left: 30px;
-    background-color: #f5f5f5;
+.btn-primary {
+    width: 50%;
+    border-bottom: 3em;/* Makes the button extend to the full width of its container */
+    background-color: #a9a9a9; /* Sets the button color to dark gray */
+    color: black;
+    font-weight: bold;/* Sets the text color inside the button to black */
+    border: none; /* Removes any borders, optional */
+    padding: 10px 20px; /* Adds padding inside the button for better visual appeal */
+    font-size: 16px; /* Increases the font size, adjust as needed */
+    transition: background-color 0.2s ease; /* Smooth transition for hover effects, optional */
 }
 
-.booking-form select.form-control {
-    color: gray;
-    background-color: white;
+.btn-primary:hover {
+    background-color: darkgrey;
 }
 
-#personal-training .booking-form-container h2,
-#personal-training .booking-form-container p {
-    text-align: center;
-    color: gray;
+label {
+    font-size: 19px; /* Adjust the size to your preference */
+    font-weight: bold; /* Optional: Makes the label text bold */
 }
 
-@keyframes wiggle {
-    0%, 16.7%, 100% {
-        transform: rotateZ(0);
-    }
-    1% {
-        transform: rotateZ(-15deg);
-    }
-    2% {
-        transform: rotateZ(10deg);
-    }
-    3% {
-        transform: rotateZ(-10deg);
-    }
-    4% {
-        transform: rotateZ(6deg);
-    }
-    5% {
-        transform: rotateZ(-4deg);
-    }
-    6% {
-        transform: rotateZ(0);
-    }
-}
 
-.blinking-button {
-    animation: wiggle 12s linear infinite;
-
-}
 
 #shop {
     background-color: #f5f5f5;
@@ -521,7 +577,8 @@ body {
     justify-content: center; /* This will horizontally center content */
     text-align: center;
     color: #fff; /* Set text color to white in case you add text later */
-    margin-top: 15px !important;
+    margin-top: 1px !important;
+    margin-bottom: 15px;
 }
 #scrollTopBtn {
     display: none; /* Initial state hidden */
@@ -562,6 +619,7 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-bottom: 15px;
 }
 #video-training{
     margin-top: 15px !important;
@@ -575,6 +633,7 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-bottom: 15px;
 }
 #contact{
     margin-top: 15px !important;
@@ -588,5 +647,6 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-bottom: 15px;
 }
 
