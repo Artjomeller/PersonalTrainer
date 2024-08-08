@@ -11,11 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function updateNavLinkHighlights() {
-        // Calculate current scroll position minus the navbar height
         const scrollPosition = window.pageYOffset + navbar.offsetHeight;
         let foundSection = false;
 
-        // Iterate over each section to find the current section
         sections.forEach(section => {
             const sectionTop = section.offsetTop - navbar.offsetHeight;
             const sectionBottom = sectionTop + section.offsetHeight;
@@ -30,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Highlight the first nav link if no section is found (indicative of being at the top of the page)
         if (!foundSection && scrollPosition < sections[0].offsetTop - navbar.offsetHeight) {
             clearHighlights();
             navLinks[0].classList.add('nav-highlight');
@@ -39,9 +36,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleScroll() {
         const scrollPosition = window.pageYOffset;
-        const carouselBottom = carousel ? carousel.offsetHeight : 0;
+        const navbarBottom = navbar.offsetTop + navbar.offsetHeight;
 
-        if (scrollPosition > carouselBottom) {
+        // Adjust navbar to fix to the top when scrolling past the navbar's bottom
+        if (scrollPosition >= navbarBottom) {
             navbar.classList.add('fixed-top');
             fixedTopContent.style.display = 'flex'; // Show the logo and text
         } else {

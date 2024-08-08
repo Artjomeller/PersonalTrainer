@@ -252,7 +252,7 @@ body {
     background-image: url('assets/Flag/flag1.png');
     top: 50%;
     transform: translateY(-50%);
-    right: -40px;
+    right: -35px;
 }
 
 .flag-rus {
@@ -378,7 +378,7 @@ body {
 }
 
 .info-block h2, .info-block h4 {
-    margin: 0px; /* Removes margin for tighter spacing */
+    margin: 1px; /* Removes margin for tighter spacing */
 }
 
 .info-block {
@@ -441,11 +441,11 @@ body {
 }
 
 .fixed-top .flag-est {
-    right: 270px; /* Originally -40px, moving 100px more to the left */
+    right: 230px; /* Originally -40px, moving 100px more to the left */
 }
 
 .fixed-top .flag-rus {
-    right: 240px; /* Originally -65px, moving 100px more to the left */
+    right: 200px; /* Originally -65px, moving 100px more to the left */
 }
 
 
