@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="10000">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -148,49 +148,73 @@
 </div>
 
 <!-- About Section -->
-<section id="about">
-    <div class="container flex flex-center">
-        <div class="row">
-            <div class="content-wrapper">
-                <div class="col-4 minust">
+<section id="about" class="flex flex-center">
+    <div class="content-wrapper container">
+            <div class="row">
+                <div class="col-lg-8 minust">
                     <h1>Minust</h1>
                     <h5><span class="consultant-color">Treener & Toitumisnõustaja</span></h5>
                     <p>Minu nimi on Stanislav Jagutkin ja olen 13-aastase kogemusega treener. Olen pühendunud tervisliku eluviisi edendamisele ja teiste inspireerimisele oma teekonna kaudu.</p>
                     <p>Minu eesmärk on aidata inimestel saavutada oma tervise- ja treeningueesmärke, pakkudes juhendamist ja motivatsiooni.</p>
                     <p>Usun, et kõik suudavad järjepidevuse ja pühendumise kaudu saavutada oma parima vormi. Minu kirg on fitness, toitumine ja tervislik eluviis ning olen siin, et jagada oma teadmisi ja kogemusi teiega.</p>
-                    <div class="info-section">
-                        <div class="info-block">
-                            <h2>13</h2>
-                            <h4>Aastat kogemust jõusaalis</h4>
-                        </div>
-                        <div class="info-block">
-                            <h2>7</h2>
-                            <h4>Aastat fitnessi valdkonnas</h4>
-                        </div>
-                        <div class="info-block">
-                            <h2>2</h2>
-                            <h4>Korda Eesti meister</h4>
-                        </div>
-                        <div class="info-block">
-                            <h2>5</h2>
-                            <h4>Aastat püsin vormis ilma endale midagi keelamata</h4>
-                        </div>
-                        <div class="info-block">
-                            <h2>10 000+</h2>
-                            <h4>Õnneliku klienti</h4>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2 info-block">
+                                <h2>13</h2>
+                                <h4>Aastat kogemust jõusaalis</h4>
+                            </div>
+                            <div class="col-2 info-block">
+                                <h2>13</h2>
+                                <h4>Aastat kogemust jõusaalis</h4>
+                            </div>
+                            <div class="col-2 info-block">
+                                <h2>13</h2>
+                                <h4>Aastat kogemust jõusaalis</h4>
+                            </div>
+                            <div class="col-2 info-block">
+                                <h2>13</h2>
+                                <h4>Aastat kogemust jõusaalis</h4>
+                            </div>
+                            <div class="col-2 info-block">
+                                <h2>13</h2>
+                                <h4>Aastat kogemust jõusaalis</h4>
+                            </div>
                         </div>
                     </div>
+
+<!--                    <div class="info-section">-->
+<!--                        <div class="info-block">-->
+<!--                        </div>-->
+<!--                        <div class="info-block">-->
+<!--                            <h2>7</h2>-->
+<!--                            <h4>Aastat fitnessi valdkonnas</h4>-->
+<!--                        </div>-->
+<!--                        <div class="info-block">-->
+<!--                            <h2>2</h2>-->
+<!--                            <h4>Korda Eesti meister</h4>-->
+<!--                        </div>-->
+<!--                        <div class="info-block">-->
+<!--                            <h2>5</h2>-->
+<!--                            <h4>Aastat püsin vormis ilma endale midagi keelamata</h4>-->
+<!--                        </div>-->
+<!--                        <div class="info-block">-->
+<!--                            <h2>10 000+</h2>-->
+<!--                            <h4>Õnneliku klienti</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
-                <div class="col-8">
+                <div class="col-lg-4">
                     <img src="assets/Picture/1.png" class="about-img" alt="about">
                 </div>
             </div>
-        </div>
     </div>
 </section>
 
 <!-- Training Section -->
 <section id="personal-training" class="container-fluid mt-5">
+    <!-- Background Image Container -->
+    <div class="collage-container"></div>
+
     <div class="content d-flex">
         <!-- Booking Form Container -->
         <div class="booking-form-container col-md-6">
@@ -271,10 +295,6 @@
                     <button type="submit" class="btn btn-primary blinking-button">Saada</button>
                 </div>
             </form>
-        </div>
-
-        <!-- Background Image Container -->
-        <div class="image-container col-md-6">
         </div>
     </div>
 </section>

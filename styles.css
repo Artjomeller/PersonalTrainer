@@ -263,6 +263,7 @@ body {
 }
 
 .content-wrapper {
+    max-width: 100%;
     position: relative;
     border: 2px solid yellow;
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
@@ -271,6 +272,8 @@ body {
     border-radius: 3em;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .content-wrapper:hover {
@@ -279,18 +282,15 @@ body {
 }
 
 #about .content-wrapper {
-     width: 100%; /* Ensures the content wrapper takes full width */
      max-height: 76vh; /* Limits the maximum height */
  }
 
 .about-img {
-    height: auto;
-    width: 120%;
+    width: 400px;
     transition: 0.5s ease;
-    margin-top: 50px;
-    position: relative;
-    top:-790px;
-    left:890px;
+    /*margin-top: 50px;*/
+    /*top:-790px;*/
+    /*left:890px;*/
 }
 
 .about {
@@ -360,9 +360,9 @@ body {
 }
 
 .minust {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-left: 30px;
+    /*padding-top: 50px;*/
+    /*padding-bottom: 50px;*/
+    /*margin-left: 30px;*/
 }
 
 .container {
@@ -648,5 +648,14 @@ section {
     justify-content: center;
     text-align: center;
     margin-bottom: 15px;
+}
+
+.collage-container {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
 }
 
